@@ -6,6 +6,12 @@ html {
   font-size: 15.75px;
 }
 
+#ember13 {
+    .full-width {
+        height: 40px;
+    }
+}
+
 body input,
 body button,
 body select,
@@ -25,20 +31,15 @@ a:visited {
     color: $primary;
 }
 
-.flag-action-type-details {
-    a {
-       text-decoration: underline; 
-    }
-    a:hover {
-        color: $tertiary;
-    }
-}
-
 p > code, li > code, pre > code {
     color: $danger;
     background-color: #f8f8f8;
     border-radius: 4px;
     padding: 0 4px 0 4px;
+}
+
+body {
+    background-color: #f5f7fa;
 }
 
 
@@ -171,17 +172,6 @@ div#banner #banner-content a.button:hover {
     background-color: lighten($tertiary, 28%);
 }
 
-//hide views column in topics list views
-.topic-list .views {
-    display: none;
-}
-
-//change tag style
-.discourse-tag.box {
-    border-radius: 5px;
-    background-color: #f0f1f2;
-}
-
 //HAMBURGER MENU
 
 // change background colour of hamburger menu (to increase contrast for links)
@@ -221,12 +211,12 @@ div#banner #banner-content a.button:hover {
 
 // change colour of 'new' notifications on topic list
 .badge-notification.new-topic {
-    color: #F45B69;
+    color: #F9A33F;
 }
 
 // change style of unread notification icon next to discussion title in list and on user pic
 .badge-notification.new-posts, .badge-notification.unread-posts, .d-header-icons .unread-notifications {
-    background-color: #F45B69;
+    background-color: #F9A33F;
     color: #fff;
 }
 
@@ -258,7 +248,7 @@ div#banner #banner-content a.button:hover {
 
 //adjust the main header background colour - James
 .d-header {
-    background-color: rgba(250, 250, 250, 0.97);
+    background-color: #f5f7fa;
 }
 
 // Hide the non-custom Location field on user profiles - James
@@ -336,3 +326,4 @@ div#banner #banner-content a.button:hover {
     height: 610px;
     border: 1px solid red;
 }
+

@@ -8,7 +8,8 @@
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {
-    "menuBgFlex": "assets/menuBgFlex.svg",
+    "icons-sprite": "assets/icons-sprite.svg",
+    "restarters-settings": "assets/restarters-settings.svg",
     "menuBg": "assets/menuBg.svg"
   },
   "color_schemes": {
@@ -20,9 +21,9 @@
       "header_background": "ffffff",
       "header_primary": "333333",
       "highlight": "ffff4d",
-      "danger": "EE424A",
+      "danger": "ee424a",
       "success": "3fa23f",
-      "love": "F49292"
+      "love": "f49292"
     }
   },
   "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"

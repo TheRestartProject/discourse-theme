@@ -1,0 +1,315 @@
+  <script type="text/discourse-plugin" version="0.8">
+       api.replaceIcon('thumbtack', 'restarters-paperclip');
+   </script>
+
+  <script type="text/discourse-plugin" version="0.4">
+    const h = require("virtual-dom").h;
+    const headerIcons = [];
+    const userIcon = []
+
+    headerIcons.push(
+      h(
+        "a.toggle-hamburger-menu",
+        {
+          href: "#"
+        },
+        h(
+          "svg.restarters-hamburger"
+        )
+      )
+    );
+
+    userIcon.push(
+      h(
+        "a.toggle-user-menu.auth-list-item", {
+          href: "#"
+        },
+        h(
+          "svg.restarters-user"
+        )
+      )
+    );
+
+    api.decorateWidget('header-icons:before', helper => {
+      return helper.h('li.restarters-hamburger-toggle',headerIcons);
+    });
+
+    api.decorateWidget('header-icons:before', helper => {
+      return helper.h('li.notification-icon');
+    });
+
+    api.decorateWidget('header-icons:before', helper => {
+      return helper.h('li.restarters-user-toggle',userIcon);
+    });
+  </script>
+  <script type='text/x-handlebars' data-template-name='navigation/default'>
+      {{d-navigation
+       filterMode=filterMode
+       canCreateTopic=canCreateTopic
+       hasDraft=draft
+       createTopic=(route-action "createTopic")}}
+    <section class="forum-before-topics">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-sm-12">
+            <h2>Latest Forum Topics</h2>
+            <hr/>
+          </div>
+        </div>
+      </div>
+    </section>
+  </script>
+  <script type='text/x-handlebars' data-template-name='topic-list-header.raw'>
+    <td class="main-link"></td>
+    <td class="posters"></td>
+    <td class="num">
+      <svg xmlns="http://www.w3.org/2000/svg" width="27.5" height="23.325" viewBox="0 0 27.5 23.325">
+          <g data-name="Vrstva 147">
+              <path d="M23.75 0h-20A3.75 3.75 0 0 0 0 3.75V15a3.75 3.75 0 0 0 3.75 3.75h1.875L8.5 22.575a1.875 1.875 0 0 0 3 0l2.875-3.825h9.375A3.75 3.75 0 0 0 27.5 15V3.75A3.75 3.75 0 0 0 23.75 0zM25 15a1.25 1.25 0 0 1-1.25 1.25H13.125L10 20.413 6.875 16.25H3.75A1.25 1.25 0 0 1 2.5 15V3.75A1.25 1.25 0 0 1 3.75 2.5h20A1.25 1.25 0 0 1 25 3.75z" data-name="Path 161"/>
+              <path d="M6.25 7.5h6.25a1.25 1.25 0 0 0 0-2.5H6.25a1.25 1.25 0 0 0 0 2.5z" data-name="Path 162"/>
+              <path d="M20 10H6.25a1.25 1.25 0 0 0 0 2.5H20a1.25 1.25 0 0 0 0-2.5z" data-name="Path 163"/>
+          </g>
+      </svg>
+    </td>
+    <td class="num">
+      <svg xmlns="http://www.w3.org/2000/svg" width="27.5" height="27.5" viewBox="0 0 27.5 27.5">
+          <g data-name="Vrstva 151">
+              <path d="M13.75 0A13.75 13.75 0 1 0 27.5 13.75 13.75 13.75 0 0 0 13.75 0zm0 25A11.25 11.25 0 1 1 25 13.75 11.25 11.25 0 0 1 13.75 25z" data-name="Path 171"/>
+              <path d="M18.75 12.675H15V6.25a1.25 1.25 0 0 0-2.5 0v7.675a1.25 1.25 0 0 0 1.25 1.25h5a1.25 1.25 0 0 0 0-2.5z" data-name="Path 172"/>
+          </g>
+      </svg>
+    </td>
+  </script>
+  <script type='text/x-handlebars' data-template-name='user'>
+      <div class='user-content-wrapper'>
+          {{outlet}}
+      </div>
+  </script>
+  <script type='text/x-handlebars' data-template-name='user/messages'>
+  {{#d-section class="user-secondary-navigation" pageClass="user-messages"}}
+  <div class="row no-gutters">
+  <select class="messages-nav messages-dropdown-123 nav-stacked action-list" id="messages-dropdown" onchange="navigateUrl(this)">
+    <option value="/my/messages" data-url="messages">
+        {{i18n 'user.messages.inbox'}}
+    </option>
+    <option value="/my/messages/sent" data-url="sent">
+        {{i18n 'user.messages.sent'}}
+    </option>
+    <option value="/my/messages/archive" data-url="archive">
+        {{i18n 'user.messages.archive'}}
+    </option>
+    {{plugin-outlet name="user-messages-nav" connectorTagName='option' args=(hash model=model)}}
+    {{#each model.groups as |group|}}
+      {{#if group.has_messages}}
+        <option value="/my/messages/group/admin" data-url="admin">
+            {{capitalize-string group.name}}
+        </option>
+        <option value="/my/messages/group/admin/archive" data-url="archive">
+            {{i18n 'user.messages.archive'}}
+        </option>
+      {{/if}}
+    {{/each}}
+
+    {{#if pmTaggingEnabled}}
+      <option class="noGlyph">
+        {{#link-to 'userPrivateMessages.tags' model}}
+          {{i18n 'user.messages.tags'}}
+        {{/link-to}}
+      </option>
+      {{#if tagId}}
+        <option class="archive">
+          {{#link-to 'userPrivateMessages.tagsShow' tagId}}
+            {{tagId}}
+          {{/link-to}}
+        </option>
+      {{/if}}
+    {{/if}}
+  </select>
+  {{#unless site.mobileView}}
+    {{#if showNewPM}}
+      {{d-button class="btn-primary new-private-message" action=(route-action "composePrivateMessage") icon="pencil"}}
+    {{/if}}
+  {{/unless}}
+
+  </div>
+
+  {{/d-section}}
+
+  <section class='user-content'>
+      <div class="row dashed no-gutters">
+          <div class="col">
+              <h2>Inbox messages</h2>
+          </div>
+          <div class="col justify-content-end">
+              {{#unless site.mobileView}}
+                {{#if showToggleBulkSelect}}
+                  {{d-button
+                    class="btn-default float-right"
+                    action=(action "toggleBulkSelect")
+                    title="Select all"
+                    icon="list"
+                    }}
+                {{/if}}
+              {{/unless}}
+              {{#if site.mobileView}}
+                {{#if showNewPM}}
+                  {{d-button
+                    class="btn-primary new-private-message"
+                    action=(route-action "composePrivateMessage")
+                    icon="envelope"
+                    label="user.new_private_message"}}
+                {{/if}}
+              {{/if}}
+
+              {{#if canArchive}}
+                {{d-button
+                  class="btn-default btn-archive float-right"
+                  action=(action "archive")
+                  label="user.messages.move_to_archive"}}
+              {{/if}}
+
+              {{#if canMoveToInbox}}
+                {{d-button
+                  class="btn-default btn-to-inbox float-right"
+                  action=(action "toInbox")
+                  label="user.messages.move_to_inbox"}}
+              {{/if}}
+
+              {{#if bulkSelectEnabled}}
+                {{d-button
+                  class="btn-default btn-select-all float-right"
+                  action=(action "selectAll")
+                  label="user.messages.select_all"}}
+              {{/if}}
+
+              {{#if isGroup}}
+                {{group-notifications-button
+                  value=group.group_user.notification_level
+                  onChange=(action "changeGroupNotificationLevel")
+                }}
+              {{/if}}
+          </div>
+      </div>
+      <div class="row no-gutters">
+          <div class="col-sm-12">
+          {{outlet}}
+          </div>
+      </div>
+  </section>
+  </script>
+  <script type='text/x-handlebars' data-template-name='list/topic-list-item.raw'>
+    {{#if bulkSelectEnabled}}
+      <td class="bulk-select">
+        <input type="checkbox" class="bulk-select">
+      </td>
+    {{/if}}
+    <td class='main-link'>
+      {{raw "topic-status" topic=topic}}
+      {{topic-link topic}}
+
+      {{raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl}}
+
+
+      {{raw "list/topic-excerpt" topic=model}}
+      <br/>
+      {{category-link topic.category hideParent="true"}}
+    </td>
+    {{raw "list/posters-column" posters=topic.featuredUsers}}
+
+    <td class="num replies posts-map posts" title="This topic has {{topic.replyCount}} replies">
+      <a href class="posts-map">{{topic.replyCount}}</a>
+      <svg xmlns="http://www.w3.org/2000/svg" id="Vrstva_428" width="11.67" height="16.667" data-name="Vrstva 428" viewBox="0 0 11.67 16.667">
+          <defs>
+              <style>
+                  .cls-1{fill-rule:evenodd}
+              </style>
+          </defs>
+          <path id="Path_587" d="M8 6.583a4.583 4.583 0 1 1 9.167 0v11.25a.833.833 0 0 1-1.667 0V6.583a2.917 2.917 0 1 0-5.833 0V12A.833.833 0 1 1 8 12z" class="cls-1" data-name="Path 587" transform="translate(-5.497 -2)"/>
+          <path id="Path_588" d="M11.424 11.241a.833.833 0 0 0-1.183 0l-1.908 1.916-1.909-1.916a.837.837 0 0 0-1.183 1.183l2.208 2.2a1.242 1.242 0 0 0 1.767 0l2.208-2.2a.833.833 0 0 0 0-1.183z" class="cls-1" data-name="Path 588" transform="translate(-4.996 -3.499)"/>
+      </svg>
+
+    </td>
+    {{raw "list/activity-column" topic=topic class="num" tagName="td"}}
+  </script>
+
+
+
+  <script>
+    Discourse.TopicListItemView.reopen({
+      showCategory: function(){
+        return !this.get('controller.hideCategory') &&
+          this.get('topic.creator') &&
+          this.get('topic.category.name') !== 'uncategorized';
+      }.property()
+    });
+
+    Discourse.Topic.reopen({
+      creator: function(){
+        var poster = this.get('posters.firstObject');
+        if(poster){
+          return poster.user;
+        }
+      }.property(),
+      lastPoster: function() {
+        var poster = this.get('posters.lastObject');
+        if(poster){
+          if (this.last_poster_username === poster.user.username){
+            return poster.user;
+          } else {
+            return this.get('creator');
+          }
+        }
+      }.property('posters'),
+      replyCount: function(){
+        return this.get('posts_count') - 1;
+      }.property(),
+      hasReplies: function(){
+        return this.get('posts_count') > 1;
+      }.property()
+
+    });
+  </script>
+
+  <script>
+    Discourse.UserCardView.reopen({
+      _willShow: function(target) {
+        if (!target) { return; }
+        var self = this,
+          width = this.$().width();
+        Em.run.schedule('afterRender', function() {
+          if (target) {
+            var position = target.offset();
+            if (position) {
+              position.left += target.width() + 10;
+
+              var overage = ($(window).width() - 50) - (position.left + width);
+              if (overage < 0) {
+                position.left += overage;
+                position.top += target.height() + 8;
+              }
+
+              position.top -= $('#main-outlet').offset().top;
+              self.$().css(position);
+            }
+          }
+        });
+      }
+    });
+  </script>
+  <script src='https://meet.jit.si/external_api.js'></script>
+  <script>
+  // Jitsi script
+  $(document).ready(function() {
+      const domain = 'meet.jit.si';
+      const options = {
+          roomName: 'RestartCommunity',
+          parentNode: document.querySelector("[data-post-id='7694'] .cooked div.video"),
+          interfaceConfigOverwrite: { TOOLBAR_BUTTONS: [
+         'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
+         'fodeviceselection', 'hangup', 'profile', 'info', 'etherpad', 'settings', 'raisehand',
+         'videoquality', 'filmstrip', 'invite', 'stats', 'shortcuts',
+         'tileview'] },
+      };
+      const api = new JitsiMeetExternalAPI(domain, options);
+  });
+  </script>
