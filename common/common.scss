@@ -1,0 +1,338 @@
+//Based on Material Design Theme: https://github.com/discourse/material-design-stock-theme
+
+//use ASAP font
+html {
+  font-family: 'Asap', sans-serif;
+  font-size: 15.75px;
+}
+
+body input,
+body button,
+body select,
+body textarea {
+  font-family: inherit;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+a {
+    color: $primary;
+}
+
+a:visited {
+    color: $primary;
+}
+
+.flag-action-type-details {
+    a {
+       text-decoration: underline; 
+    }
+    a:hover {
+        color: $tertiary;
+    }
+}
+
+p > code, li > code, pre > code {
+    color: $danger;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    padding: 0 4px 0 4px;
+}
+
+
+// change link formatting on FAQ, Terms of Use & Privacy pages
+.wrap .contents div[itemprop="mainContentOfPage"] a {
+   text-decoration: underline;
+}
+
+.wrap .contents div[itemprop="mainContentOfPage"] a:hover {
+    color: lighten($primary,35%);
+}
+
+//adjust button colours
+.btn-primary {
+    background-color:$primary;
+}
+.btn-primary:hover, .btn-primary.btn-hover {
+    /*background-color:$primary;
+    text-decoration: underline;*/
+    color: $primary;
+    background-color: $tertiary;
+}
+
+//adjust 'join' group button on group page
+.group-index-join.btn.btn-icon-text.ember-view {
+    background-color: $tertiary;
+    color:$primary;
+        .fa.d-icon.d-icon-user-plus.svg-icon.svg-string {
+        color:$primary;
+    }
+}
+.group-index-join.btn.btn-icon-text.ember-view:hover {
+    background-color: $primary;
+    color: $secondary;
+    .fa.d-icon.d-icon-user-plus.svg-icon.svg-string {
+        color:$secondary;
+    }
+}
+
+//adjust 'message' group button on group page
+.btn-primary.group-message-button.inline.btn.btn-icon-text.ember-view {
+    background-color: lighten($primary, 75%);
+    color: $primary;
+}
+.btn-primary.group-message-button.inline.btn.btn-icon-text.ember-view:hover {
+    background-color: lighten($primary, 40%);
+    color: $secondary;
+    .fa.d-icon.d-icon-envelope.svg-icon.svg-string {
+        color: $secondary;
+    }
+}
+
+//change position of bulk action moderation button
+.bulk-select-container #bulk-select {
+    position:inherit;
+}
+
+// change link colour in discussions
+.cooked, .d-editor-preview, .group-bio {
+    a {
+        color: #222222;
+        text-decoration: underline;
+    }
+    // but not for buttons
+    .button {
+        color: #fff;
+        text-decoration: none;
+    }
+    // change @ mentions
+    a.mention, a.mention-group {
+        text-decoration: none;
+        background-color: lighten($primary, 75%);
+    }
+}
+// change link color & style of Oneboxes (for external links)
+aside.onebox .onebox-body a[href] {
+    color: #222222;
+    text-decoration: underline;
+}
+
+// change link color of discussion title in the compose reply pop-up window
+#reply-control .reply-to .composer-action-title .topic-link, #reply-control .reply-to .composer-action-title .user-link, #reply-control .reply-to .composer-action-title .post-link {
+    color: #222222;
+    text-decoration: underline;
+}
+
+// change link style, bg colour & border of banners
+div#banner {
+    padding: 8px;
+    max-height: 200px;
+    background-color: lighten($tertiary, 26%);
+    border: 3px dotted $tertiary;
+    border-radius: 10px;
+        #banner-content a {
+            text-decoration: underline;
+        }
+        // reduces spacing after <p> tags
+        p {
+            margin-bottom: 0px;
+        }
+}
+
+// ^^ except text decoration in buttons
+div#banner #banner-content a.button {
+    text-decoration: none;
+}
+
+div#banner #banner-content a.button:hover {
+    text-decoration: underline;
+}
+
+//change background of category filter in navigation bar (collapsed)
+.list-controls .combo-box .combo-box-header {
+    border-radius: 4.5em 6.625em/5.625em 4.5em;
+    background-color: #fff;
+}
+
+//change background of category filter in navigation bar (expanded: search bar)
+.select-kit.combo-box .select-kit-filter {
+    background-color: #fff;
+}
+
+//change background of category filter in navigation bar (expanded: category list)
+.list-controls .select-kit .select-kit-collection {
+    background-color: #fff;
+}
+
+//change design of pinned topics in list views
+.topic-list-item.pinned {
+    background-color: lighten($tertiary, 28%);
+}
+
+//hide views column in topics list views
+.topic-list .views {
+    display: none;
+}
+
+//change tag style
+.discourse-tag.box {
+    border-radius: 5px;
+    background-color: #f0f1f2;
+}
+
+//HAMBURGER MENU
+
+// change background colour of hamburger menu (to increase contrast for links)
+.menu-panel {
+    background-color: #fff;
+}
+
+.menu-panel ul.menu-links li a:hover, .menu-panel ul.menu-links li a:focus, .menu-panel ul li.heading a:hover, .menu-panel ul li.heading a:focus, .menu-panel li a:hover, .menu-panel li a:focus {
+    background-color: #ffcc81;
+    color: $primary;
+}
+
+//USER NOTIFICATION MENU & NOTIFICATIONS
+
+// change background colour of read notification items in user menu
+.user-menu .notifications .read {
+    background-color: #fff;
+    color: #222;
+}
+
+// change bg colour of unread notifications in user menu
+.user-menu .notifications li {
+    background-color: #ffeed7;
+    color: #222;
+    a {
+        color: #222;
+    }
+    a:visited {
+        color: #919191;
+    }
+}
+
+// change bg colour of notifications upon hover (and of the icons at top of menu)
+.user-menu .notifications li:hover, .user-menu .notifications li:focus, div.menu-links-header a:hover, div.menu-links-header a:focus {
+    background-color: #ffcc81;
+}
+
+// change colour of 'new' notifications on topic list
+.badge-notification.new-topic {
+    color: #F45B69;
+}
+
+// change style of unread notification icon next to discussion title in list and on user pic
+.badge-notification.new-posts, .badge-notification.unread-posts, .d-header-icons .unread-notifications {
+    background-color: #F45B69;
+    color: #fff;
+}
+
+//round buttons
+.btn {
+  border-radius: 4.5em 6.625em/5.625em 4.5em;
+}
+
+//remove shadow from a few buttons
+.d-editor-button-bar .btn,
+.bulk-select-all,
+.bulk-clear-all,
+.period-chooser-header,
+.topic-map .btn.no-text,
+.badge-section .btn,
+#revision .btn,
+#new-account-link,
+#login-link {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+//No more image cropping
+#reply-control .d-editor-preview img:not(.thumbnail):not(.emoji),
+.cooked img:not(.thumbnail):not(.emoji) {
+  max-width: 100% !important;
+  height: auto;
+}
+
+//adjust the main header background colour - James
+.d-header {
+    background-color: rgba(250, 250, 250, 0.97);
+}
+
+// Hide the non-custom Location field on user profiles - James
+.control-group.pref-location {
+    display: none;
+}
+
+.category-boxes .category-box-inner, .category-boxes-with-topics .category-box-inner {
+    background-color: #fff;
+    border-style: none;
+}
+
+//Shrink subcategory box title padding 
+.category-box .category-box-heading {
+    padding: 0;
+}
+
+.category-box-heading h3 {
+    margin: 0.5em 0 0.5em 0;
+}
+
+// Remove description from subcategory boxes (as displayed in parent categories)
+.category-box-inner .description {
+    margin: 0;
+    padding: 0;
+}
+
+// Change style of timeline on discussion threads (overall timeline)
+.timeline-container .topic-timeline .timeline-scrollarea {
+    border-color: #ffbe5f;
+}
+
+// Change style of timeline on discussion threads (current location bar)
+ .timeline-container .topic-timeline .timeline-handle {
+    background-color: #ffbe5f;
+}
+
+.d-icon.d-icon-d-tracking, .d-icon.d-icon-d-watching {
+    color: inherit;    
+}
+
+// Change style of Admin Post Notices
+.post-notice.custom {
+    background-color: lighten($tertiary, 10%);
+}
+
+// Hide full name of groups on group directory page
+.groups-table .groups-info .groups-info-full-name {
+    display: none;
+}
+
+//Hide banner (gloablly pinned banner discussion) from non-signed in users
+.anon #banner {
+    display: none;
+}
+
+//Babble chat plugin CSS overrides
+.babble-sidebar {
+    resize: horizontal;
+    min-width: 240px;
+}
+
+.babble-sidebar-collapsed--left {
+    left: 3%;
+}
+
+.widget-button.btn.no-text.btn-icon:hover {
+    background-color: $tertiary;
+    border-radius: 4.5em 6.625em/5.625em 4.5em;
+}
+
+//Experimental Jitsi embed
+[data-post-id='1234'] .cooked div {
+    width: 97%;
+    height: 610px;
+    border: 1px solid red;
+}

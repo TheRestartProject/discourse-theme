@@ -1,0 +1,29 @@
+{
+  "name": "Light",
+  "component": false,
+  "license_url": null,
+  "about_url": null,
+  "authors": null,
+  "theme_version": null,
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {
+    "menuBgFlex": "assets/menuBgFlex.svg",
+    "menuBg": "assets/menuBg.svg"
+  },
+  "color_schemes": {
+    "Restart light": {
+      "primary": "222222",
+      "secondary": "f5f7fa",
+      "tertiary": "ffbe5f",
+      "quaternary": "ffbe5f",
+      "header_background": "ffffff",
+      "header_primary": "333333",
+      "highlight": "ffff4d",
+      "danger": "EE424A",
+      "success": "3fa23f",
+      "love": "F49292"
+    }
+  },
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
+}
