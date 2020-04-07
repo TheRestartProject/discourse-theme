@@ -1,329 +1,1149 @@
-//Based on Material Design Theme: https://github.com/discourse/material-design-stock-theme
+//NEW DISCOURSE STYLES
+//.container,
+//.wrap {
+//  max-width: 1230px;
+//}
 
-//use ASAP font
-html {
-  font-family: 'Asap', sans-serif;
-  font-size: 15.75px;
+.full-width {
+  width: 100%;
 }
 
-#ember13 {
-    .full-width {
-        height: 40px;
+.topic-list {
+  background-color: unset !important;
+}
+
+.topic-list-item.pinned {
+  background-color: #ffffff;
+  border: 1px solid #000 !important;
+}
+
+.topic-list tr {
+  margin: 10px 0;
+  display: block;
+  //border-bottom: 0;
+  background-color: #ffffff;
+}
+
+.topic-list tr td {
+  width: 850px;
+}
+
+.raw-topic-link {
+  font-family: "Asap", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.13;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.list-controls {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .btn {
+    box-shadow: 5px 5px 0 0 #000;
+    border: solid 1px #000;
+    background-color: #ffffff;
+    border-radius: 0;
+    font-weight: bold;
+    padding: 20px 16px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    line-height: 1.13px;
+    float: left;
+    height: 50px;
+    margin-right: 15px;
+
+    &:hover {
+      border: solid 2px #000;
+      background-color: #ffffff;
+      padding: 19px 15px;
+    }
+
+    &:active,
+    &:focus {
+      border: solid 1px #000;
+      background-color: #000000;
+      color: #ffffff;
+      box-shadow: 0;
+      padding: 19px 16px;
+    }
+
+    .d-icon {
+      display: none;
+    }
+  }
+}
+
+tbody {
+  border-top: 0;
+}
+
+.header-icon {
+  margin-bottom: 50px;
+
+  svg {
+    margin-left: 15px;
+  }
+}
+//change bg colour of browser notification consent box
+.alert.alert-info {
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff !important;
+  border: 2px dashed #000000 !important;
+  border-radius: 0 !important;
+}
+
+.highlighted {
+  background-color: #ffffff !important;
+  animation: unset !important;
+}
+
+.forum-header {
+  margin-top: 54px;
+}
+
+.row {
+  > div {
+    -webkit-flex: 1 1 15em;
+  }
+}
+
+.forum-before-topics {
+  clear: both;
+  padding-top: 50px;
+
+  .container {
+    padding: 0;
+  }
+
+  hr {
+    color: #000000;
+    border-top: 2px dashed #000000;
+  }
+
+  @media(max-width: 567px) {
+    display: none;
+  }
+}
+
+.topic-list {
+  thead {
+    @media(max-width: 567px) {
+      display: none;
+    }
+
+    tr {
+      margin: 0;
+      background-color: #f5f7fa;
+      margin: 0;
+    }
+
+    svg {
+      transform: rotate(0deg);
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .replies {
+    svg {
+      transform: rotate(90deg);
+    }
+
+    .posts-map {
+      font-weight: 700;
+      font-size: 16px;
+      color: #000000 !important;
+    }
+  }
+
+  .post-activity {
+    color: #000000 !important;
+    font-size: 16px;
+  }
+
+  tr {
+    .main-link {
+      width: 820px;
+    }
+
+    .posters {
+      width: 160px;
+    }
+
+    .num {
+      width: 65px;
+    }
+  }
+
+  .posters {
+    @media (max-width: 567px) {
+      display: none;
+    }
+  }
+
+  .topic-list-item {
+    border: 1px solid transparent;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:hover {
+      box-shadow: 5px 5px 0 0 #000;
+      border: 1px solid #000000;
+    }
+  }
+}
+
+.container {
+  padding: 0;
+}
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.d-header>.wrap {
+  width: 100%;
+}
+
+header .title {
+    margin-right: 50px;
+}
+
+.forum-tabs {
+  margin-bottom: 32px;
+
+  a {
+    &:hover {
+      h3 {
+        text-decoration: underline;
+        color: #000000;
+      }
+    }
+  }
+
+  .col-12 {
+    text-align: center;
+    padding: 18px;
+
+    h3 {
+      font-weight: bold;
+      font-size: 16px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      display: inline-block;
+    }
+
+    svg {
+      display: inline-block;
+    }
+
+    &:not(.active) {
+      border: 1px solid #000000;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #000000;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    .forum-unread {
+      width: 10px;
+      height: 10px;
+      position: relative;
+      right: 0;
+      top: -2px;
+      border-radius: 50%;
+      background-color: #f45b69;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .col-md-4 {
+      &:last-child {
+        border-bottom: 1px solid #000000;
+      }
+    }
+  }
+
+  .forum.active {
+    border-top: 5px solid #000000;
+    border-left: 1px solid #000000;
+  }
+
+  .inbox.active {
+    border-top: 5px solid #000000;
+    border-right: 1px solid #000000;
+  }
+}
+
+.btn-search {
+  padding: 13px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  display: inline-block;
+
+  @media screen and (max-width: 768px) {
+    right: 0;
+    position: absolute;
+  }
+
+  &:active,
+  &:focus {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  &:hover {
+    border: 2px solid #000000;
+    background-color: #ffffff !important;
+  }
+
+  svg {
+    transform: rotate(90deg);
+  }
+}
+
+// INBOX
+.user-content-wrapper {
+    display: block;
+
+    .dashed {
+        padding-bottom: 30px;
+        border-bottom: 2px dashed #000000;
+        margin-top: 50px;
+        margin-bottom: 26px;
+    }
+
+    .new-private-message {
+        padding: 0;
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #000000;
+        border-radius: 0;
+        margin-left: 30px;
+        height: 50px;
+        width: 50px;
+
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+    }
+
+    #messages-dropdown {
+      -webkit-appearance: none;
+      background-color: #ffffff !important;
+      border: 1px solid #000000;
+      border-radius: 0;
+      font-size: 16px;
+      line-height: 1.63;
+      text-align: left;
+      padding: 11px 13px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14.38" height="7.861" viewBox="0 0 14.38 7.861"><path d="M6.491 7.472a1.512 1.512 0 0 0 2.025 0l5.5-5.237A1.251 1.251 0 1 0 12.241.472L7.653 4.797a.312.312 0 0 1-.413 0L2.079.31a1.254 1.254 0 0 0-1.65 1.888z" data-name="Path 125"/></svg>');
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: right 0.75em center;
+      //margin-left: 16px;
+
+      * {
+        color: #000000;
+        background-colour: #ffffff;
+      }
     }
 }
 
-body input,
-body button,
-body select,
-body textarea {
-  font-family: inherit;
+.open .grippie {
+    background: #000000;
 }
 
-h1, h2 {
+.btn-primary,
+.btn-default {
+    border-radius: 0;
+    background-color: #ffffff;
+    padding: 13px;
+    border: 1px solid #000000;
+
+    &:hover {
+        background-color: #ffffff !important;
+        border: 2px solid #000000;
+        color: #000000 !important;
+    }
+
+    &:focus,
+    &:active {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        background-image: unset;
+    }
+}
+
+.btn {
+  &:hover {
+    .d-icon {
+        color: #000000 !important;
+    }
+  }
+
+  &:focus,
+  &:active {
+    .d-icon {
+        color: #ffffff !important;
+        background-color: #000000 !important;
+    }
+  }
+}
+
+.btn-default {
+  box-shadow: 6px 6px 0 0 #000;
+}
+
+.btn-select-all {
+  margin-right: 30px;
+}
+
+.user-messages-page {
+  .topic-list {
+    tr {
+      padding: 10px 0;
+
+      td {
+        //padding: 18px 12px;
+      }
+    }
+  }
+}
+
+.d-header-icons {
+
+  #search-button {
+    display: none;
+  }
+
+  .icon {
+    display: none;
+  }
+
+  .toggle-notifications-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 2.2857em;
+    height: 2.2857em;
+    padding: 0.2143em;
+    text-decoration: none;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    outline: none;
+    height: 60px;
+    width: 60px;
+
+    .notification-bell {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" id="not_ico" width="30" height="30" viewBox="0 0 30 30"><defs><style>.cls-1{fill:none}</style></defs>    <path id="Path_1882" d="M27.236 19.5c-2.75-2.75-3.25-4-3.25-8.625a9.375 9.375 0 1 0-18.75 0 17.177 17.177 0 0 1-.375 4.5 10.562 10.562 0 0 1-2.75 4.25 1.728 1.728 0 0 0-.375 2 2.117 2.117 0 0 0 1.75 1.125h6.25a5 5 0 0 0 10 0h6.25a2.117 2.117 0 0 0 1.75-1.125 2.017 2.017 0 0 0-.5-2.125zM14.611 4a6.936 6.936 0 0 1 6.875 6.875c0 3.375 0 6 2.875 9.375h-19.5c2.875-3.375 2.875-6 2.875-9.375A6.936 6.936 0 0 1 14.611 4zm-2.5 18.75h5a2.5 2.5 0 0 1-5 0z" data-name="Path 1882" transform="translate(.389 .375)"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  .dropdown-menu-items {
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+    display: none;
+    float: right;
+    list-style: none;
+    background-color: #000000;
+    padding: 27px 30px;
+    float: left;
+    right: 60px;
+    width: 280px;
+
+    li {
+      margin: 0;
+      width: 100%;
+      padding: 8px 0;
+      text-align: left;
+      word-break: break-all;
+
+      a {
+        text-align: left;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        padding: 8px 0;
+        letter-spacing: 1.05px;
+        text-align: left;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .dropdown-active {
+    .bell-icon-active {
+     display: none;
+    }
+  }
+
+  .toggle-hamburger-menu.dropdown-active,
+  .toggle-user-menu.dropdown-active {
+    display: block;
+
+    &::before {
+      left: unset;
+    }
+  }
+
+  a.dropdown-active {
+    background-color: #000;
+
+    &::before {
+      content: '';
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: url('https://test-restarters.rstrt.org/images/cross-icon.svg');
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  svg.restarters-hamburger {
+    background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 3000 2500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><g transform="matrix(1.01981,0,0,1,-153.473,-161.868)"><path d="M2782.57,699.719C2782.57,684.342 2770.33,671.858 2755.26,671.858L487.451,671.858C472.373,671.858 460.131,684.342 460.131,699.719C460.131,715.095 472.373,727.579 487.451,727.579L2755.26,727.579C2770.33,727.579 2782.57,715.095 2782.57,699.719Z" style="fill:none;stroke:black;stroke-width:99.01px;"></path></g><g transform="matrix(1.01981,0,0,1,-153.473,550.281)"><path d="M2782.57,699.719C2782.57,684.342 2770.33,671.858 2755.26,671.858L487.451,671.858C472.373,671.858 460.131,684.342 460.131,699.719C460.131,715.095 472.373,727.579 487.451,727.579L2755.26,727.579C2770.33,727.579 2782.57,715.095 2782.57,699.719Z" style="fill:none;stroke:black;stroke-width:99.01px;"></path></g><g transform="matrix(1.01981,0,0,1,-153.473,1262.43)"><path d="M2782.57,699.719C2782.57,684.342 2770.33,671.858 2755.26,671.858L487.451,671.858C472.373,671.858 460.131,684.342 460.131,699.719C460.131,715.095 472.373,727.579 487.451,727.579L2755.26,727.579C2770.33,727.579 2782.57,715.095 2782.57,699.719Z" style="fill:none;stroke:black;stroke-width:99.01px;"></path></g></svg>');
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 60px;
+    display: block;
+  }
+
+  svg.restarters-hamburger-admin {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" id="admin-menu_ico" width="30" height="30" viewBox="0 0 30 30"><defs><style>.admin_ico_1{fill:none}.admin_ico_2{fill-rule:evenodd}</style></defs><path id="Rectangle_184" d="M0 0h30v30H0z" class="admin_ico_1" data-name="Rectangle 184"/><g id="Layer" transform="translate(2.5 2.507)"><g id="Vrstva_209" data-name="Vrstva 209"><path id="Path_384" d="M3.25 6.659h10.113a3.75 3.75 0 0 0 7.275 0h5.112a1.25 1.25 0 0 0 0-2.5h-5a1.6 1.6 0 0 0-.338 0 3.75 3.75 0 0 0-6.825 0 1.6 1.6 0 0 0-.338 0h-10a1.25 1.25 0 0 0 0 2.5zM17 4.509a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 17 4.509z" class="admin_ico_2" data-name="Path 384" transform="translate(-2 -1.964)"/><path id="Path_385" d="M3.25 13.651h2.613a3.75 3.75 0 0 0 7.262 0H25.75a1.25 1.25 0 0 0 0-2.5H12.875a3.75 3.75 0 0 0-6.788 0 1.6 1.6 0 0 0-.337 0h-2.5a1.25 1.25 0 0 0 0 2.5zM9.5 11.5a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 9.5 11.5z" class="admin_ico_2" data-name="Path 385" transform="translate(-2 -.206)"/><path id="Path_386" d="M3.25 20.643h11.375a3.75 3.75 0 0 0 7.25 0h3.875a1.25 1.25 0 0 0 0-2.5h-4.125a3.75 3.75 0 0 0-6.75 0H3.25a1.25 1.25 0 0 0 0 2.5zm15-2.15a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z" class="admin_ico_2" data-name="Path 386" transform="translate(-2 1.552)"/></g></g></svg>');
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 60px;
+    display: block;
+  }
+
+  svg.restarters-user {
+    background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="Path_117" transform="matrix(1,0,0,1,0.5,0.251)"><path d="M19.125,14.4C20.939,12.979 22,10.8 22,8.496C22,4.381 18.614,0.996 14.5,0.996C10.386,0.996 7,4.381 7,8.496C7,10.8 8.061,12.979 9.875,14.4C5.134,16.288 2.005,20.897 2,26L2,27.25C2,27.936 2.564,28.5 3.25,28.5C3.936,28.5 4.5,27.936 4.5,27.25L4.5,26C4.5,20.514 9.014,16 14.5,16C19.986,16 24.5,20.514 24.5,26L24.5,27.25C24.5,27.936 25.064,28.5 25.75,28.5C26.436,28.5 27,27.936 27,27.25L27,26C26.995,20.897 23.866,16.288 19.125,14.4ZM9.5,8.5C9.5,5.757 11.757,3.5 14.5,3.5C17.243,3.5 19.5,5.757 19.5,8.5C19.5,11.243 17.243,13.5 14.5,13.5C11.757,13.5 9.5,11.243 9.5,8.5Z"></path></g></svg>');
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 60px;
+    display: block;
+  }
+}
+
+.dropdown-menu-header {
+  font-size: 13px;
+  font-weight: normal;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hamburger-dropdown-menu-items {
+  position: absolute;
+  top: 73%;
+  z-index: 1000;
+  display: none;
+  float: right;
+  list-style: none;
+  background-color: #000000;
+  padding: 27px 30px;
+  float: left;
+  right: 120px;
+  width: 280px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+    width: 100%;
+    padding: 8px 0;
+    text-align: left;
+    word-break: break-all;
+
+    a {
+      text-align: left;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      padding: 8px 0;
+      letter-spacing: 1.05px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  }
+
+  .header {
+    display: none;
+  }
+
+  .reporting_spacer {
+    display: none;
+  }
+}
+
+.user-dropdown-menu-items {
+  position: absolute;
+  top: 73%;
+  z-index: 1000;
+  display: none;
+  float: right;
+  list-style: none;
+  background-color: #000000;
+  padding: 27px 30px;
+  float: left;
+  right: 0;
+  width: 280px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+    width: 100%;
+    padding: 8px 0;
+    text-align: left;
+    word-break: break-all;
+
+    a {
+      text-align: left;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      padding: 8px 0;
+      letter-spacing: 1.05px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.admin-menu-header {
+  font-size: 12px;
+  line-height: 36px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.admin-dropdown-spacer,
+.dropdown-spacer {
+  border-top: 1px solid white !important;
+  padding: 0 !important;
+  margin: 12px 0 !important;
+  width: 115px !important;
+}
+
+.list-controls .combo-box .combo-box-header {
+  border-radius: 0;
+  box-shadow: 5px 5px 0 0 #000;
+  border: solid 1px #000;
+  background-color: #ffffff;
+  border-radius: 0;
+  font-weight: bold;
+  padding: 20px 16px;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  line-height: 18px;
+
+
+  &:hover {
+    border: 2px solid #000000;
+    box-shadow: 5px 5px 0 0 #000;
+    padding: 19px 15px;
+  }
+}
+
+.select-kit .select-kit-header .selected-name {
+  overflow: visible;
+}
+
+.select-kit.combo-box .select-kit-header.is-focused {
+  border: 2px solid #000000;
+  box-shadow: 5px 5px 0 0 #000;
+ }
+
+#navigation-bar {
+  li {
+    //box-shadow: 5px 5px 0 0 #000;
+    border: solid 1px #000;
+    background-color: #ffffff;
+    border-radius: 0;
     font-weight: bold;
+    padding: 6px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    line-height: 1.13px;
+
+    > a {
+      color: #222;
+      font-weight: 700;
+      background-color: transparent;
+      border-bottom: 0;
+      background-image: unset;
+    }
+
+    &:last-child {
+      display: none;
+    }
+
+    &:hover {
+      border: 2px solid #000000;
+      padding: 5px;
+      //box-shadow: 5px 5px 0 0 #000;
+    }
+
+    &.active {
+        background-color: #ffbe5f
+    }
+  }
+}
+
+/*#navigation-bar li:nth-child(4),
+#navigation-bar li:nth-child(5) {
+    display: none;
+}*/
+
+#navigation-bar li:nth-child(10) {
+  clear: both;
+  margin: 10px 5px 10px 0;
+}
+
+#navigation-bar li:nth-child(11) {
+  margin: 10px 5px;
+}
+
+.admin-main-nav {
+    height: unset !important;
+}
+
+.d-header #site-logo {
+  width: 180px;
+  height: auto;
+
+  @media screen and (max-width: 768px) {
+    max-height: unset;
+  }
+}
+
+.wrap {
+  max-width: 1140px;
+  padding: 0;
+}
+
+.d-header .panel {
+  max-width: 977px !important;
+}
+
+.d-header {
+background-color: #f5f7fa;
+}
+
+.reason {
+  margin-left: 25px;
+  line-height: 47px !important;
+}
+
+.hide-menus {
+
+  h1 {
+    font-size: 1.5157em !important;
+  }
+
+  .custom-header-links {
+    display: none;
+  }
+  .panel {
+    width: unset !important;
+  }
+
+  #site-logo {
+    width: unset !important;
+    height: 2.57em;
+  }
+}
+
+.widget-button.btn.no-text.btn-icon {
+  &:hover {
+    border-radius: 0;
+    background-color: #ffffff !important;
+    border: 2px solid #000000;
+  }
+}
+
+.timeline-container .topic-timeline .timeline-scrollarea {
+  border-color: #000000;
+}
+
+.post-stream {
+  .topic-avatar {
+    margin-right: 10px;
+  }
+}
+
+
+.timeline-container .topic-timeline .timeline-handle {
+  background-color: #000000;
+}
+
+.user-preferences-page {
+  .user-content-wrapper {
+    display: flex;
+  }
+}
+
+.pinned .topic-status {
+  color: #000000;
+  position: relative;
+  top: -19px;
+
+  svg {
+    color: #000000 !important;
+    height: 25px !important;
+    width: 25px !important;
+  }
+}
+
+.topic-list-item.visited a.title:not(.badge-notification) {
+  color: #000000;
+}
+
+.topic-list-item {
+  &:not(.pinned) {
+    & td.main-link {
+        padding-left: 40px;
+    }
+  }
+}
+
+.anon {
+  .header-buttons {
+    width: 100%;
+  }
+
+  .login-button {
+    float: right;
+    margin-right: 10px;
+  }
+}
+
+.user-messages-page {
+  .topic-status {
+    color: #000000;
+    top: 0;
+  }
+}
+
+.talk-categories {
+  float: left;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  max-width: 307px;
+  height: 50px;
+  margin-right: 15px;
+
+  span {
+    padding: 12px 16px;
+    display: block;
+
+    &:hover {
+      padding: 11px 15px;
+      border: 2px solid #000000;
+    }
+
+    svg {
+      float: right;
+      margin: 10px 0;
+    }
+  }
+
+  .talk-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #000000;
+    position: relative;
+    display: block;
+    background: #ffffff;
+    z-index: 2;
+    width: 307px;
+    left: -1px;
+
+    li {
+      &:not(:last-child) {
+        border-bottom: 1px solid;
+      }
+
+      &:hover {
+        background-color: #f5f7fa;
+      }
+
+      a {
+      display: block;
+      padding: 10px 10px 10px 30px;
+
+        &:hover {
+          color: #000000;
+          text-decoration: none;
+        }
+      }
+
+      svg {
+        transform: rotate(-90deg);
+        float: right;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+.forum-nav-text {
+  line-height: 50px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 991px) {
+  .forum-nav-text {
+    display: none;
+  }
+
+  button#create-topic span {
+    display: block;
+  }
+}
+
+.btn {
+  transition: unset;
+}
+
+.btn-primary {
+  &:hover {
+    outline: none;
+  }
+}
+
+//.list-controls .select-kit .select-kit-collection {
+//  display: none;
+//}
+
+.display-none {
+  display: none !important;
+}
+
+.display-block {
+  display: block !important;
+}
+
+.topic_categories {
+  svg {
+    transform: rotate(-90deg);
+  }
+}
+
+.select-kit {
+  .d-icon {
+    display: block !important;
+  }
+}
+
+#create-topic, .list-controls  .edit-category {
+  float: right;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .forum-tabs .forum.active {
+        border-right: 1px solid #000000;
+    }
+    .col-12 {
+      width: 49%;
+      max-width: 49%;
+    }
+
+    .login-button {
+      .d-button-label {
+        display: block;
+      }
+    }
+
+    .d-button-label {
+      display: none;
+    }
+
+    .messages-nav {
+      width: 100%;
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+
+    .user-content {
+      .row {
+        > div {
+          -webkit-flex: 1 1 0;
+        }
+      }
+    }
 }
 
 a {
-    color: $primary;
+ color: #000000;
+ &:visited,
+ &:hover,
+ &:active {
+  color: #000000;
+ }
 }
 
-a:visited {
-    color: $primary;
-}
+.badge-wrapper {
+    padding-top: 25px;
 
-p > code, li > code, pre > code {
-    color: $danger;
-    background-color: #f8f8f8;
-    border-radius: 4px;
-    padding: 0 4px 0 4px;
-}
-
-body {
-    background-color: #f5f7fa;
-}
-
-
-// change link formatting on FAQ, Terms of Use & Privacy pages
-.wrap .contents div[itemprop="mainContentOfPage"] a {
-   text-decoration: underline;
-}
-
-.wrap .contents div[itemprop="mainContentOfPage"] a:hover {
-    color: lighten($primary,35%);
-}
-
-//adjust button colours
-.btn-primary {
-    background-color:$primary;
-}
-.btn-primary:hover, .btn-primary.btn-hover {
-    /*background-color:$primary;
-    text-decoration: underline;*/
-    color: $primary;
-    background-color: $tertiary;
-}
-
-//adjust 'join' group button on group page
-.group-index-join.btn.btn-icon-text.ember-view {
-    background-color: $tertiary;
-    color:$primary;
-        .fa.d-icon.d-icon-user-plus.svg-icon.svg-string {
-        color:$primary;
-    }
-}
-.group-index-join.btn.btn-icon-text.ember-view:hover {
-    background-color: $primary;
-    color: $secondary;
-    .fa.d-icon.d-icon-user-plus.svg-icon.svg-string {
-        color:$secondary;
+ @media screen and (max-width: 768px) {
+        padding-top: 10px;
     }
 }
 
-//adjust 'message' group button on group page
-.btn-primary.group-message-button.inline.btn.btn-icon-text.ember-view {
-    background-color: lighten($primary, 75%);
-    color: $primary;
-}
-.btn-primary.group-message-button.inline.btn.btn-icon-text.ember-view:hover {
-    background-color: lighten($primary, 40%);
-    color: $secondary;
-    .fa.d-icon.d-icon-envelope.svg-icon.svg-string {
-        color: $secondary;
-    }
-}
+@media screen and (max-width: 375px) {
+  .hamburger-dropdown-menu-items {
+    right: 0;
+    width: 100%;
+    min-width: 320px;
+    max-width: 375px;
+    top:100%;
+  }
 
-//change position of bulk action moderation button
-.bulk-select-container #bulk-select {
-    position:inherit;
-}
+  .dropdown-menu-items {
+    right: 0 !important;
+    width: 100% !important;
+    min-width: 320px;
+    max-width: 375px;
+  }
 
-// change link colour in discussions
-.cooked, .d-editor-preview, .group-bio {
-    a {
-        color: #222222;
-        text-decoration: underline;
-    }
-    // but not for buttons
-    .button {
-        color: #fff;
-        text-decoration: none;
-    }
-    // change @ mentions
-    a.mention, a.mention-group {
-        text-decoration: none;
-        background-color: lighten($primary, 75%);
-    }
-}
-// change link color & style of Oneboxes (for external links)
-aside.onebox .onebox-body a[href] {
-    color: #222222;
-    text-decoration: underline;
+  .user-dropdown-menu-items {
+    right: 0 !important;
+    width: 100% !important;
+    min-width: 320px;
+    max-width: 375px;
+    top: 100%;
+  }
 }
 
-// change link color of discussion title in the compose reply pop-up window
-#reply-control .reply-to .composer-action-title .topic-link, #reply-control .reply-to .composer-action-title .user-link, #reply-control .reply-to .composer-action-title .post-link {
-    color: #222222;
-    text-decoration: underline;
+@media screen and (max-width: 415px) {
+  .hamburger-dropdown-menu-items {
+    top:100%;
+  }
+
+  .user-dropdown-menu-items {
+    top: 100%;
+  }
 }
 
-// change link style, bg colour & border of banners
-div#banner {
-    padding: 8px;
-    max-height: 200px;
-    background-color: lighten($tertiary, 26%);
-    border: 3px dotted $tertiary;
-    border-radius: 10px;
-        #banner-content a {
-            text-decoration: underline;
-        }
-        // reduces spacing after <p> tags
-        p {
-            margin-bottom: 0px;
-        }
+
+/**
+* iPad 2 Fixes
+**/
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 1){
+  #main,
+  #main-outlet,
+  .d-header {
+      background-color: #f5f7fa !important;
+  }
 }
 
-// ^^ except text decoration in buttons
-div#banner #banner-content a.button {
-    text-decoration: none;
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+    .user-content-wrapper {
+      padding: 0 75px;
+  }
+  
 }
 
-div#banner #banner-content a.button:hover {
-    text-decoration: underline;
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .user-content-wrapper {
+      padding: 0 25px;
+  }
+  
 }
 
-//change background of category filter in navigation bar (collapsed)
-.list-controls .combo-box .combo-box-header {
-    border-radius: 4.5em 6.625em/5.625em 4.5em;
-    background-color: #fff;
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+    .user-content-wrapper {
+      padding: 0 32px;
+  }
+  
 }
 
-//change background of category filter in navigation bar (expanded: search bar)
-.select-kit.combo-box .select-kit-filter {
-    background-color: #fff;
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+   .user-content-wrapper {
+      padding: 0 25px;
+  }
+  
 }
-
-//change background of category filter in navigation bar (expanded: category list)
-.list-controls .select-kit .select-kit-collection {
-    background-color: #fff;
-}
-
-//change design of pinned topics in list views
-.topic-list-item.pinned {
-    background-color: lighten($tertiary, 28%);
-}
-
-//HAMBURGER MENU
-
-// change background colour of hamburger menu (to increase contrast for links)
-.menu-panel {
-    background-color: #fff;
-}
-
-.menu-panel ul.menu-links li a:hover, .menu-panel ul.menu-links li a:focus, .menu-panel ul li.heading a:hover, .menu-panel ul li.heading a:focus, .menu-panel li a:hover, .menu-panel li a:focus {
-    background-color: #ffcc81;
-    color: $primary;
-}
-
-//USER NOTIFICATION MENU & NOTIFICATIONS
-
-// change background colour of read notification items in user menu
-.user-menu .notifications .read {
-    background-color: #fff;
-    color: #222;
-}
-
-// change bg colour of unread notifications in user menu
-.user-menu .notifications li {
-    background-color: #ffeed7;
-    color: #222;
-    a {
-        color: #222;
-    }
-    a:visited {
-        color: #919191;
-    }
-}
-
-// change bg colour of notifications upon hover (and of the icons at top of menu)
-.user-menu .notifications li:hover, .user-menu .notifications li:focus, div.menu-links-header a:hover, div.menu-links-header a:focus {
-    background-color: #ffcc81;
-}
-
-// change colour of 'new' notifications on topic list
-.badge-notification.new-topic {
-    color: #F9A33F;
-}
-
-// change style of unread notification icon next to discussion title in list and on user pic
-.badge-notification.new-posts, .badge-notification.unread-posts, .d-header-icons .unread-notifications {
-    background-color: #F9A33F;
-    color: #fff;
-}
-
-//round buttons
-.btn {
-  border-radius: 4.5em 6.625em/5.625em 4.5em;
-}
-
-//remove shadow from a few buttons
-.d-editor-button-bar .btn,
-.bulk-select-all,
-.bulk-clear-all,
-.period-chooser-header,
-.topic-map .btn.no-text,
-.badge-section .btn,
-#revision .btn,
-#new-account-link,
-#login-link {
-  border-radius: 0;
-  box-shadow: none;
-}
-
-//No more image cropping
-#reply-control .d-editor-preview img:not(.thumbnail):not(.emoji),
-.cooked img:not(.thumbnail):not(.emoji) {
-  max-width: 100% !important;
-  height: auto;
-}
-
-//adjust the main header background colour - James
-.d-header {
-    background-color: #f5f7fa;
-}
-
-// Hide the non-custom Location field on user profiles - James
-.control-group.pref-location {
-    display: none;
-}
-
-.category-boxes .category-box-inner, .category-boxes-with-topics .category-box-inner {
-    background-color: #fff;
-    border-style: none;
-}
-
-//Shrink subcategory box title padding 
-.category-box .category-box-heading {
-    padding: 0;
-}
-
-.category-box-heading h3 {
-    margin: 0.5em 0 0.5em 0;
-}
-
-// Remove description from subcategory boxes (as displayed in parent categories)
-.category-box-inner .description {
-    margin: 0;
-    padding: 0;
-}
-
-// Change style of timeline on discussion threads (overall timeline)
-.timeline-container .topic-timeline .timeline-scrollarea {
-    border-color: #ffbe5f;
-}
-
-// Change style of timeline on discussion threads (current location bar)
- .timeline-container .topic-timeline .timeline-handle {
-    background-color: #ffbe5f;
-}
-
-.d-icon.d-icon-d-tracking, .d-icon.d-icon-d-watching {
-    color: inherit;    
-}
-
-// Change style of Admin Post Notices
-.post-notice.custom {
-    background-color: lighten($tertiary, 10%);
-}
-
-// Hide full name of groups on group directory page
-.groups-table .groups-info .groups-info-full-name {
-    display: none;
-}
-
-//Hide banner (gloablly pinned banner discussion) from non-signed in users
-.anon #banner {
-    display: none;
-}
-
-//Babble chat plugin CSS overrides
-.babble-sidebar {
-    resize: horizontal;
-    min-width: 240px;
-}
-
-.babble-sidebar-collapsed--left {
-    left: 3%;
-}
-
-.widget-button.btn.no-text.btn-icon:hover {
-    background-color: $tertiary;
-    border-radius: 4.5em 6.625em/5.625em 4.5em;
-}
-
-//Experimental Jitsi embed
-[data-post-id='1234'] .cooked div {
-    width: 97%;
-    height: 610px;
-    border: 1px solid red;
-}
-
