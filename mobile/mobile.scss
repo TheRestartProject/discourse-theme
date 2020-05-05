@@ -77,3 +77,28 @@
 .btn .fa {
     margin-right: 0;
 }
+
+.messages-nav {
+    width: 220px;
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+.new-private-message {
+    float: right;
+    margin-top: -102px;
+}
+
+@media screen and (min-width: 376px) {
+  .d-header {
+      .dropdown-menu-items {
+        right: 77px;
+      }
+      .hamburger-dropdown-menu-items {
+        right: 137px;
+      }
+      .user-dropdown-menu-items {
+        right: 17px;
+      }
+  }
+}

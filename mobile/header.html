@@ -4,46 +4,6 @@
      api.replaceIcon('envelope', 'restarters-pencil');
  </script>
 
-<script type="text/discourse-plugin" version="0.4">
-  const h = require("virtual-dom").h;
-  const headerIcons = [];
-  const userIcon = []
-
-  headerIcons.push(
-    h(
-      "a.toggle-hamburger-menu",
-      {
-        href: "#"
-      },
-      h(
-        "svg.restarters-hamburger"
-      )
-    )
-  );
-
-  userIcon.push(
-    h(
-      "a.toggle-user-menu.auth-list-item", {
-        href: "#"
-      },
-      h(
-        "svg.restarters-user"
-      )
-    )
-  );
-
-  api.decorateWidget('header-icons:before', helper => {
-    return helper.h('li.restarters-hamburger-toggle',headerIcons);
-  });
-
-  api.decorateWidget('header-icons:before', helper => {
-    return helper.h('li.notification-icon');
-  });
-
-  api.decorateWidget('header-icons:before', helper => {
-    return helper.h('li.restarters-user-toggle',userIcon);
-  });
-</script>
 <script type='text/x-handlebars' data-template-name='navigation/default'>
     {{d-navigation
      filterMode=filterMode
