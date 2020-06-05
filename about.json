@@ -1,5 +1,5 @@
 {
-  "name": "Light",
+  "name": "Test theme",
   "component": false,
   "license_url": null,
   "about_url": null,
@@ -8,11 +8,20 @@
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {
-    "icons-sprite": "assets/icons-sprite.svg",
-    "restarters-settings": "assets/restarters-settings.svg",
-    "menuBg": "assets/menuBg.svg"
   },
   "color_schemes": {
+    "Redesign": {
+      "primary": "222222",
+      "secondary": "f5f7fa",
+      "tertiary": "ffbe5f",
+      "quaternary": "ffbe5f",
+      "header_background": "ffffff",
+      "header_primary": "222222",
+      "highlight": "ffbe5f",
+      "danger": "EE424A",
+      "success": "3fa23f",
+      "love": "F49292"
+    },
     "Restart light": {
       "primary": "222222",
       "secondary": "f5f7fa",

@@ -1,104 +1,109 @@
-#main,
-.d-header {
-    background-color: #f5f7fa !important;
+@mixin boxShadow {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 0 0 0 rgba(0, 0, 0, 0.12);
 }
-  
-  .d-header-icons {
-      display: inline-flex;
+
+//create conversation cards
+.topic-body {
+  @include boxShadow;
+  background-color: lighten($secondary, 10%);
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 2px;
+}
+
+//more space for avatars
+.topic-avatar {
+  border-top: 0;
+  padding-top: 20px;
+  padding-left: 10px;
+  .avatar-flair {
+    right: 4px;
   }
+}
 
-@media screen and (max-width: 768px) {
-.topic-list tr {
-    width: 100%;
-    
-    .main-link {
-        width: 70%;
+// topics in lists
+.topic-list th, .topic-list td {
+    padding: 1em; //redesign
+}
+
+// top navigation button (latest, categories etc.)
+.list-controls .nav-pills .navigation-toggle, {
+    border: 1px solid $primary; //redesign
+    background-color: #fff;
+    text-transform: uppercase; //redesign
+    letter-spacing: 1.2px; //redesign
+    padding: 10px; //redesign
+    color: $primary;
+    font-weight: 600;
+    box-shadow: 5px 5px 0 0 $primary;
+}
+
+.list-controls .nav-pills .navigation-toggle a {
+    background-color: inherit;
+}
+
+// top navigation drop down menu (latest, categories etc.)
+.list-controls .nav-pills .drop {
+    border: 1px solid $primary;
+    background-color: #fff;
+}
+
+div.topic-item-stats.clearfix {
+    border-spacing: 0;
+}
+
+//increase space between post meta and post content
+.boxed .contents {
+  padding: 20px 0 0 0;
+}
+
+//remove stray border from bottom of last post
+.topic-status-info {
+  border-top: 0;
+}
+
+.small-action {
+  border: none;
+}
+
+#topic-closing-info {
+  border: none;
+}
+
+//remove lines between cards
+.topic-post article {
+  border: none;
+}
+
+//put shadow on quotes as well
+aside.quote {
+  @include boxShadow;
+}
+
+// RTL Overrides
+.rtl {
+  .topic-avatar {
+    padding-left: initial;
+    padding-right: 10px;
+    .avatar-flair {
+      right: initial;
+      left: 4px;
     }
-}
-
-
-}
-
-.topic-list {
-    th,
-    td {
-        max-width: unset;
-    }
-}
-
-
-.topic-list-item {
-    td {
-        .pull-left {
-            display: none;
-        }
-        
-        .right {
-            margin-left: 0;
-            
-            .main-link {
-                padding: 0;
-            }
-            
-            .posts-map {
-                color: #000000 !important;
-                padding: 0;
-            }
-            
-            .activity {
-                a {
-                    color: #000000 !important;
-                }
-            }
-        }
-        
-        .topic-item-stats {
-            .category {
-                margin-left: 28px;
-            }
-            
-            .discourse-tags {
-                margin-left: 28px;
-            }
-            
-            .badge-wrapper {
-                padding: 0;
-            }
-        }
-    }
-    
-    &:not(.pinned) {
-        .main-link {
-            margin-left: 28px;
-        }
-    }
-}
-
-.btn .fa {
-    margin-right: 0;
-}
-
-.messages-nav {
-    width: 220px;
-    margin-left: 0;
-    margin-bottom: 10px;
-}
-
-.new-private-message {
-    float: right;
-    margin-top: -102px;
-}
-
-@media screen and (min-width: 376px) {
-  .d-header {
-      .dropdown-menu-items {
-        right: 77px;
-      }
-      .hamburger-dropdown-menu-items {
-        right: 137px;
-      }
-      .user-dropdown-menu-items {
-        right: 17px;
-      }
   }
+}
+
+//change text and border colour of topic progress box
+#topic-progress {
+    color: inherit;
+    border: 1px solid #f5f7fa;
+}
+
+//change background colour of topic progress bar
+#topic-progress .bg {
+    background-color: lighten($tertiary, 10%);
+}
+
+//remove padding above topic title when reading a topic
+div#topic-title.ember-view {
+    padding: 0;
 }
