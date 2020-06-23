@@ -20,11 +20,6 @@
   background-color: #fff;
 }
 
-// remove padding around subcategory boxes (in category view)
-.category-boxes .category-box .category-box-inner {
-    padding: 0;
-}
-
 //increase opacity of fa icons in top nav (e.g. on user page)
 .user-main .nav-pills a:hover:not(.active) i {
     opacity: 0.91;
