@@ -387,6 +387,11 @@ div#banner #banner-content a.button:hover {
     border-style: none;
 }
 
+// Change border around category boxes
+.category-boxes .category-box, .category-boxes-with-topics .category-box {
+    border-width: 2px;
+}
+
 //category name styling
 .badge-wrapper .badge-category .category-name {
     letter-spacing: 0.05em;
