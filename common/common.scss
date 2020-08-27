@@ -480,3 +480,40 @@ div#banner #banner-content a.button:hover {
 .user-menu .quick-access-panel .read {
     background-color: #fff;
 }
+
+// in-topic button styles
+.topic-body .button {
+    display: inline-block;
+    background: $header_background;
+    color: $primary;
+    text-align: center;
+    font-weight: bold;
+    text-decoration:none;
+    padding: 6px 12px;
+    width: -webkit-max-content;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin: 10px 0;
+    text-decoration: none;
+    box-shadow: 3px 3px $primary;
+    border: solid 2px $primary;
+}
+ 
+.topic-body .button a {
+}
+
+.topic-body .button:hover {
+    color: $primary;
+    text-decoration: none;
+    box-shadow: none;
+    margin: 13px 0 7px 3px;
+}
+
+.topic-body .button:visited {
+    color: $primary;
+    text-decoration: none;
+}
+
+.topic-body .button:active {
+    background-color: $secondary;
+}
