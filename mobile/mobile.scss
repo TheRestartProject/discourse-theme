@@ -107,3 +107,12 @@ aside.quote {
 div#topic-title.ember-view {
     padding: 0;
 }
+
+.d-header #site-logo {
+  // Discourse is serving the big logo class even with the mobile view.
+  &.logo-big {
+    height: 3.6em !important;
+    width: auto !important;
+    translate: unset !important;
+  }
+}
