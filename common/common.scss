@@ -519,7 +519,7 @@ div#banner #banner-content a.button:hover {
 }
 
 .archetype-private_message .current-user-post:not(.moderator) .topic-body .cooked {
-    background-color: unset !important;
+    background-color: lighten($secondary, 10%) !important;
 }
 
 .archetype-private_message .current-user-post .topic-body .cooked {
@@ -535,6 +535,6 @@ div#banner #banner-content a.button:hover {
     background-color: transparent !important;
 
     .regular-contents .cooked {
-        background-color: lighten($secondary, 10%);
+        background-color: lighten($secondary, 10%) !important;
     }
 }
