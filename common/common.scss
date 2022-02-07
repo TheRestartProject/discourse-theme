@@ -533,8 +533,8 @@ div#banner #banner-content a.button:hover {
 
 .topic-body {
     background-color: transparent !important;
+}
 
-    .regular-contents .cooked {
-        background-color: lighten($secondary, 10%) !important;
-    }
+.topic-body .regular-contents .cooked {
+    background-color: lighten($secondary, 10%) !important;
 }
