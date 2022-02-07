@@ -525,3 +525,7 @@ div#banner #banner-content a.button:hover {
 .archetype-private_message .current-user-post .topic-body .cooked {
     border: 1px solid var(--primary-low) !important;
 }
+
+.topic-list .topic-list-data {
+    padding: unset !important;
+}
