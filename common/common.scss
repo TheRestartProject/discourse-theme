@@ -530,3 +530,11 @@ div#banner #banner-content a.button:hover {
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+.topic-body {
+    background-color: transparent !important;
+
+    .regular-contents .cooked {
+        background-color: lighten($secondary, 10%);
+    }
+}
