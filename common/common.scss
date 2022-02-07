@@ -517,3 +517,11 @@ div#banner #banner-content a.button:hover {
 .topic-body .button:active {
     background-color: $secondary;
 }
+
+.archetype-private_message .current-user-post:not(.moderator) .topic-body .cooked {
+    background-color: unset !important;
+}
+
+.archetype-private_message .current-user-post .topic-body .cooked {
+    border: unset !important;
+}
