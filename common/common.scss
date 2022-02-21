@@ -547,3 +547,10 @@ div#banner #banner-content a.button:hover {
     padding-bottom: 0px;
 }
 
+/* Disable sticky avatars because it breaks scrolling */
+.topic-post.sticky-avatar {
+    .topic-avatar {
+        position: relative !important;
+        top: unset !important; /* May be needed in some cases */
+    }
+}
