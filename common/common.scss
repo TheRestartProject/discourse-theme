@@ -548,10 +548,14 @@ div#banner #banner-content a.button:hover {
 }
 
 /* Disable sticky avatars because it breaks scrolling */
-.topic-post.sticky-avatar {
-    .topic-avatar {
-        position: relative !important;
-        top: unset !important; /* May be needed in some cases */
-        margin-bottom: 58px !important;
-    }
+.d-header-wrap {
+    // this makes the header position fixed, so it's not part of the page height
+    position: fixed;
+    width: 100%;
+}
+
+#main-outlet {
+    // this offsets the page content by the height of the large header
+    // needed because the fixed position puts the header on top of the content
+    padding-top: 150px !important;
 }
