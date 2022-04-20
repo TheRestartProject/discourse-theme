@@ -562,12 +562,16 @@ div#banner #banner-content a.button:hover {
 
 // Background image for Sharepair only.
 .tag-title-header.tag-banner-sharepair {
-    margin-top: 20px;
+    margin-top: 80px;
     background-repeat: no-repeat;
     background-image: url(https://www.nweurope.eu/media/8998/sharepair-logo.png);
     background-position: center bottom;
     background-size: contain;
     background-color: transparent;
+}
+
+body.tag-sharepair #main-outlet {
+    padding-top: 2.5em;
 }
 
 .tag-title-header:not(.tag-banner-sharepair) {
