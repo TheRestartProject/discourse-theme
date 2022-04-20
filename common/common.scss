@@ -570,8 +570,8 @@ div#banner #banner-content a.button:hover {
     background-color: transparent;
 }
 
-body.tag-sharepair #main-outlet {
-    padding-top: 2.5em;
+body.tag-sharepair .wrap {
+    padding-top: 2.5em !important;
 }
 
 .tag-title-header:not(.tag-banner-sharepair) {
