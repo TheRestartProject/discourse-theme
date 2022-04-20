@@ -559,3 +559,22 @@ div#banner #banner-content a.button:hover {
     // needed because the fixed position puts the header on top of the content
     padding-top: 150px !important;
 }
+
+// Background image for Sharepair only.
+.tag-title-header.tag-banner-sharepair {
+    margin-top: 20px;
+    background-repeat: no-repeat;
+    background-image: url(https://www.nweurope.eu/media/8998/sharepair-logo.png);
+    background-position: center bottom;
+    background-size: contain;
+    background-color: transparent;
+}
+
+.tag-title-header:not(.tag-banner-sharepair) {
+    display: none;
+}
+
+.tag-title-contents {
+    display: none;
+}
+
