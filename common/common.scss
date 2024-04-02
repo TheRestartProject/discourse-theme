@@ -523,7 +523,8 @@ div#banner #banner-content a.button:hover {
     .current-user-post {
       .topic-body {
         .regular.contents {
-          border: 1px solid var(--tertiary) !important;
+          border: 1px solid var(--tertiary-medium) !important;
+          background-color: var(--tertiary-low) !important;
         }
       }
     }
