@@ -71,19 +71,21 @@ li#ember319.select-kit.single-select.combobox.combo-box.category-drop.is-expande
 }
 
 //create conversation cards
-.topic-body {
-  background-color: lighten($secondary, 10%);
-  margin-top: 10px;
-  border-radius: 2px;
-  padding: 12px 20px 0 20px;
-}
+:not(.archetype-private_message) {
+  .topic-body {
+    background-color: lighten($secondary, 10%);
+    margin-top: 10px;
+    border-radius: 2px;
+    padding: 12px 20px 0 20px;
+  }
 
-//more space for avatars
-.topic-avatar {
-  border-top: 0;
-  padding-right: 10px;
-  .avatar-flair {
-    right: 4px;
+  //more space for avatars
+  .topic-avatar {
+    border-top: 0;
+    padding-right: 10px;
+    .avatar-flair {
+      right: 4px;
+    }
   }
 }
 
