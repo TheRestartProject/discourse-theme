@@ -522,22 +522,22 @@ div#banner #banner-content a.button:hover {
     background-color: $secondary;
 }
 
+// private message styles
 .archetype-private_message {
-    .current-user-post:not(.moderator) .topic-body .cooked {
-        background-color: lighten($secondary, 10%) !important;
-    }
-
-    .current-user-post .topic-body .cooked {
-        border: 1px solid var(--primary-low) !important;
+    .current-user-post {
+      .topic-body {
+        .regular.contents {
+          border: 1px solid var(--tertiary-medium) !important;
+          background-color: var(--tertiary-low) !important;
+        }
+      }
     }
 
     .topic-body {
         background-color: transparent !important;
 
         .regular.contents {
-            .cooked {
-                background-color: lighten($secondary, 10%) !important;
-            }
+            background-color: #fff !important;
         }
     }
 
