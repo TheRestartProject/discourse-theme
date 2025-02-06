@@ -207,6 +207,10 @@ div#banner #banner-content a.button:hover {
     font-weight: 600;
 }
 
+.select-kit.combo-box.tag-drop .selected-name {
+    color: $secondary !important;
+}
+
 .list-controls .combo-box .combo-box-header:hover {
     border: 2px solid #222; //redesign
     padding: 9px; //redesign
