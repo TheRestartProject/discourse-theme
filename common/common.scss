@@ -17,6 +17,10 @@ h1, h2 {
     font-weight: bold;
 }
 
+h1, h2, h3, h4, h5 {
+    font-family: 'Asap', sans-serif !important;
+}
+
 a {
     color: $primary;
 }
@@ -195,18 +199,18 @@ div#banner #banner-content a.button:hover {
 //change category filter in navigation bar (collapsed)
 .list-controls .combo-box .combo-box-header {
     border: 1px solid #222; //redesign
-    background-color: $primary;
+    background-color: $primary !important;
     text-transform: uppercase; //redesign
     letter-spacing: 1.2px; //redesign
     padding: 10px; //redesign
-    color: $secondary;
+    color: $secondary !important;
     font-weight: 600;
 }
 
 .list-controls .combo-box .combo-box-header:hover {
     border: 2px solid #222; //redesign
     padding: 9px; //redesign
-    color: $tertiary; //redesign
+    color: $tertiary !important; //redesign
 }
 
 .select-kit.combo-box.category-drop .select-kit-row .topic-count {
@@ -552,12 +556,6 @@ div#banner #banner-content a.button:hover {
     // this makes the header position fixed, so it's not part of the page height
     position: fixed;
     width: 100%;
-}
-
-#main-outlet {
-    // this offsets the page content by the height of the large header
-    // needed because the fixed position puts the header on top of the content
-    padding-top: 150px !important;
 }
 
 // Background image for Sharepair only.
