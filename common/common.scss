@@ -29,6 +29,10 @@ a:visited {
     color: $primary !important;
 }
 
+.topic-list-item.visited a {
+    color: $secondary !important;
+}
+
 .flag-action-type-details {
     a {
        text-decoration: underline; 
