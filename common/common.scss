@@ -204,6 +204,7 @@ div#banner #banner-content a.button:hover {
 //change category filter in navigation bar (collapsed)
 .list-controls .combo-box .combo-box-header {
     border: 1px solid #222; //redesign
+    border-radius: 0px;
     background-color: $primary !important;
     text-transform: uppercase; //redesign
     letter-spacing: 1.2px; //redesign
