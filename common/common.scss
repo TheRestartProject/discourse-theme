@@ -125,14 +125,14 @@ span.link-top-line:hover {
 }
 
 //adjust 'join' group button on group page
-.group-index-join.btn.btn-icon-text.ember-view {
+.group-index-join.btn.btn-icon-text {
     background-color: $tertiary;
     color:$primary;
         .fa.d-icon.d-icon-user-plus.svg-icon.svg-string {
         color:$primary;
     }
 }
-.group-index-join.btn.btn-icon-text.ember-view:hover {
+.group-index-join.btn.btn-icon-text:hover {
     background-color: $primary;
     color: $secondary;
     .fa.d-icon.d-icon-user-plus.svg-icon.svg-string {
@@ -240,7 +240,7 @@ div#banner #banner-content a.button:hover {
 }
 
 //dropdown arrow icon on category select filter in top navigation
-.category-drop-header.ember-view svg.fa.d-icon.d-icon-caret-down.svg-icon.caret-icon.svg-string, svg.fa.d-icon.d-icon-caret-right.svg-icon.caret-icon.svg-string {
+.category-drop-header svg.fa.d-icon.d-icon-caret-down.svg-icon.caret-icon.svg-string, svg.fa.d-icon.d-icon-caret-right.svg-icon.caret-icon.svg-string {
     color: #fff;
 }
 
@@ -448,7 +448,7 @@ div#banner #banner-content a.button:hover {
 }
 
 // links in notices at bottom of topic lists 
-.footer-message.ember-view a {
+.footer-message a {
     text-decoration: underline;
 }
 
