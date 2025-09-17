@@ -83,7 +83,7 @@ table.topic-list thead tr, table.topic-list thead th, table.topic-list thead th:
 
 // normal topics
 table.topic-list tr {
-    background-color: #fff; //redesign
+    background-color: #fff !important; //redesign
 }
 
 table.topic-list tr:hover {
@@ -113,6 +113,11 @@ span.link-top-line:hover {
 
 .wrap .contents div[itemprop="mainContentOfPage"] a:hover {
     color: lighten($primary,35%);
+}
+
+// No rounded corners.
+.btn {
+    border-radius: 0px !important;
 }
 
 //adjust button colours
@@ -174,6 +179,7 @@ aside.onebox .onebox-body a[href] {
 #reply-control .reply-to .composer-action-title .topic-link, #reply-control .reply-to .composer-action-title .user-link, #reply-control .reply-to .composer-action-title .post-link {
     color: #222222;
     text-decoration: underline;
+    background-color: white !important;
 }
 
 // change link style, bg colour & border of banners
@@ -601,4 +607,19 @@ div#banner #banner-content a.button:hover {
 
 button.topic-drafts-menu-trigger {
     margin-left: 1rem;
+}
+
+.topic-list-body {
+    .topic-list-data {
+        .link-top-line {
+            line-height(1.7);
+        }
+    }
+}
+
+button {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
