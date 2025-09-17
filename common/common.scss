@@ -82,7 +82,9 @@ table.topic-list thead tr, table.topic-list thead th, table.topic-list thead th:
 }
 
 // normal topics
-$topic-list-item-background-color: 'white';
+table.topic-list .topic-list-item {
+    background-color: #fff !important; //redesign
+}
 
 table.topic-list tr:hover {
     border: 1px solid $primary; //redesign
