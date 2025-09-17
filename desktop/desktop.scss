@@ -27,11 +27,11 @@
 
 //top navigation links
 
-ul#navigation-bar.nav.nav-pills.ember-view li {
+ul#navigation-bar.nav.nav-pills li {
 
 }
 
-ul#navigation-bar.nav.nav-pills.ember-view li a {
+ul#navigation-bar.nav.nav-pills li a {
     border: 1px solid #222; //redesign
     background-color: #fff;
     text-transform: uppercase; //redesign
@@ -39,23 +39,23 @@ ul#navigation-bar.nav.nav-pills.ember-view li a {
     padding: 12px; //redesign
 }
 
-ul#navigation-bar.nav.nav-pills.ember-view li:hover {
+ul#navigation-bar.nav.nav-pills li:hover {
 
 }
 
-ul#navigation-bar.nav.nav-pills.ember-view li a:hover, ul#navigation-bar.nav.nav-pills.ember-view li a.active {
+ul#navigation-bar.nav.nav-pills li a:hover, ul#navigation-bar.nav.nav-pills li a.active {
     border: 2px solid #222; //redesign
     padding: 11px; //redesign
     background: $header_background;
     color: inherit;
 }
 
-ul#navigation-bar.nav.nav-pills.ember-view li a.active {
+ul#navigation-bar.nav.nav-pills li a.active {
     background-color: $tertiary;
 }
 
 //dropdown category menu
-li#ember319.select-kit.single-select.combobox.combo-box.category-drop.is-expanded.bullet.ember-view.is-under div#ember322.select-kit-body.ember-view {
+li.select-kit.single-select.combobox.combo-box.category-drop.is-expanded.bullet.is-under div.select-kit-body {
     border: 1px solid #222; //redesign
 }
 
