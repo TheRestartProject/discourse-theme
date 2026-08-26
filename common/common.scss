@@ -341,8 +341,9 @@ div#banner #banner-content a.button:hover {
     border: 1px solid #222;
     transition: unset;
     box-shadow: 5px 5px 0 0 $primary;
-    background-color: #fff;
+    background-color: $secondary;
     padding: 10px;
+    color: $primary;
 }
 
 .btn#create-topic:hover, .dropdown-select-box.notifications-button.category-notifications-button button:hover {
