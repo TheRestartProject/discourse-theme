@@ -358,7 +358,11 @@ div#banner #banner-content a.button:hover {
 }
 
 // svg icons in create topic button and notification settings button
-.btn#create-topic:hover svg, .dropdown-select-box.notifications-button.category-notifications-button:hover svg, .select-kit.dropdown-select-box .dropdown-select-box-header:hover svg {
+.btn#create-topic .d-icon,
+.btn#create-topic:hover .d-icon,
+.btn#create-topic svg,
+.btn#create-topic:hover svg,
+.dropdown-select-box.notifications-button.category-notifications-button .d-icon {
     color: $primary;
 }
 
