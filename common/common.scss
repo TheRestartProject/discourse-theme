@@ -222,9 +222,13 @@ div#banner #banner-content a.button:hover {
     font-weight: bold;
 }
 
-.category-navigation .badge-category__name {
+.list-controls .combo-box .combo-box-header .badge-category__name {
     color: $secondary !important;
     font-weight: bold;
+}
+
+.select-kit.combo-box.category-drop .select-kit-body .badge-category__name {
+    color: $primary;
 }
 
 .list-controls .combo-box .combo-box-header:hover {
